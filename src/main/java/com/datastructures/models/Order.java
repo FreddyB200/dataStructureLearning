@@ -16,9 +16,18 @@ public class Order {
         this.totalPrice = calculateTotal();
     }
 
-    private double calculateTotal() {
+    private  double calculateTotal() {
         return products.stream().mapToDouble(Product::getPrice).sum();
     }
+
+    //otra forma de hacer el metodo
+//    private double calculateTotal() {
+//        double total = 0.0;
+//        for (Product product : products) {
+//            total += product.getPrice();
+//        }
+//        return total;
+//    }
 
     @Override
     public String toString() {
