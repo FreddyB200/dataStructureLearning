@@ -1,5 +1,6 @@
 package com.datastructures.utils;
 
+import com.datastructures.models.Order;
 import com.datastructures.models.User;
 import com.datastructures.models.Product;
 import java.util.ArrayList;
@@ -23,9 +24,30 @@ public class DataGenerator {
     public static List<Product> generateProducts(int count) {
         List<Product> products = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            products.add(new Product("P" + i, NAMES[RANDOM.nextInt(PRODUCTS.length)], RANDOM.nextDouble() * 1000));
+            products.add(new Product("P" + i, PRODUCTS[RANDOM.nextInt(PRODUCTS.length)], RANDOM.nextDouble() * 1000));
         }
         return products;
+    }
+
+
+    public static List<Order> generateOrders(int count, List<User> users, List<Product> products, int min, int max) {
+        List<Order> orders = new ArrayList<>();
+
+        for (int i = 0; i < count; i++) {
+            //creating a user
+            User user = users.get(RANDOM.nextInt(users.size()));
+
+            //product list for the order
+            List<Product> orderProducts = new ArrayList<>();
+            int productCount = RANDOM.nextInt(min) + max;
+
+            for (int j = 0; j < productCount ; j++) {
+                Product product = products.get(RANDOM.nextInt(products.size()));
+                orderProducts.add(product);
+            }
+            orders.add(new Order("O" + i, user, orderProducts));
+        }
+        return orders;
     }
 
 }
