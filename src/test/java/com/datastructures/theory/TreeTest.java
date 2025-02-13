@@ -1,4 +1,4 @@
 package com.datastructures.theory;
 
-public class QueueTheory {
+public class TreeTest {
 }

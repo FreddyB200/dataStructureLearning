@@ -1,4 +1,4 @@
 package com.datastructures.theory;
 
-public class TreeTheory {
+public class StackTest {
 }

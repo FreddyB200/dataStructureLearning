@@ -1,5 +1,6 @@
 package com.datastructures;
 import java.util.ArrayList;
+import com.datastructures.theory.*;
 import java.util.List;
 import com.datastructures.models.*;
 import com.datastructures.utils.*;
@@ -9,7 +10,12 @@ import java.util.Comparator;
 public class Main {
 
     public static void main(String[] args) {
+        //arrayListExercices();
+        linkedListExercices();
 
+    }
+
+    private static void arrayListExercices(){
         System.out.println("---Generating data---");
 
         //Stars the time-taking
@@ -35,7 +41,7 @@ public class Main {
 
         //generate orders
         List<Order> orders = DataGenerator.generateOrders(5000, users, products, 2, 10);
-        for (Order order : orders) {;
+        for (Order order : orders) {
             System.out.println("Order ID: " + order.getOrderId());
             System.out.println("User who made the order: " + order.getUser().getName());
             System.out.println("Quantity of products ordered: " + order.getProducts().size());
@@ -76,4 +82,44 @@ public class Main {
         System.out.println("Run time: " + duration + "ns");
         System.out.println("Run time: " + milisecondsDuration + "ms");
     }
+
+    private static void linkedListExercices(){
+
+        LinkedList<String> myList = new LinkedList<>();
+
+        // Agregar elementos
+        myList.add("Alice");
+        myList.add("Bob");
+        myList.add("Charlie");
+        myList.add("David");
+
+        System.out.println("Lista actual:");
+        myList.print();
+
+        // Eliminar un elemento
+        myList.remove("Bob");
+        System.out.println("Después de eliminar 'Bob':");
+        myList.print();
+
+        System.out.println("Tamaño de la lista: " + myList.size());
+
+        //Java LinkedList
+        List<String> list = new java.util.LinkedList<>();
+
+        list.add("Alice");
+        list.add("Bob");
+        list.add("Charlie");
+        list.add("freddy");
+        System.out.println("Tamaño de la lista enlazada de java utils: " + list.size());
+
+        System.out.println("Lista: " + list);
+
+        list.remove("Bob");
+        System.out.println("Después de eliminar 'Bob': " + list);
+        System.out.println("Tamaño de la lista enlazada de java utils: " + list.size());
+
+    }
+
+
+
 }

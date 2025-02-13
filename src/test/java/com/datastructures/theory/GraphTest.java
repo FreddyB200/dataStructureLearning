@@ -1,4 +1,4 @@
 package com.datastructures.theory;
 
-public class HashTableTheoryTest {
+public class GraphTest {
 }
