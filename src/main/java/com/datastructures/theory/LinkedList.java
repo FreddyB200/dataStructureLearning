@@ -76,7 +76,7 @@ public class LinkedList<T> {
         return size;
     }
 
-    // Método para invertir la lista doblemente enlazada en su lugar
+    // invertir lista doblemente enlazada
     public void reverse() {
         Node<T> current = head;
         Node<T> temp = null;

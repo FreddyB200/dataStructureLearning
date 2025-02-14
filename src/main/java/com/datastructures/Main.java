@@ -118,8 +118,10 @@ public class Main {
         System.out.println("Después de eliminar 'Bob': " + list);
         System.out.println("Tamaño de la lista enlazada de java utils: " + list.size());
 
+
+        myList.reverse();
+        myList.print();
+
     }
-
-
 
 }
